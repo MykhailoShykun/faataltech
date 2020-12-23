@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="InkStudio" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="InkStudio">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/inkdesign.studio/israel/wp-content/themes/ataltechtheme" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/node_modules" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="kulikandpartners">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
