@@ -8,7 +8,9 @@
                 <a href="<?= home_url(); ?>" class="button button_certificates">See more</a>
             </div>
         </div>
-        <img src="<?= get_template_directory_uri() ?>/img/dest/certificate.jpg" alt="picture" class="certificates__image">
-        <img src="<?= get_template_directory_uri() ?>/img/dest/certificate-iso.jpg" alt="picture" class="certificates__image">
+        <div class="certificates">
+            <img src="<?= get_template_directory_uri() ?>/img/dest/certificate.jpg" alt="picture" class="certificates__image">
+            <img src="<?= get_template_directory_uri() ?>/img/dest/certificate-iso.jpg" alt="picture" class="certificates__image">
+        </div>
     </div>
 </section>

@@ -40,6 +40,9 @@
     margin-bottom: 19px;
     @media screen and (min-width: $screen-xl) {
       margin-bottom: 22px;
+      &:last-child {
+        margin-bottom: 100px;
+      }
     }
   }
   &.subtitle_certificates {
@@ -61,6 +64,7 @@
     font-size: 36px;
     line-height: 49px;
     margin-bottom: 45px;
+    padding-top: 50px;
   }
   &.title__certificates {
     padding-top: 124px;
@@ -105,4 +109,5 @@
 .footprint__logo {
   width: 19px;
   margin-left: 6px;
+  margin-right: 6px;
 }

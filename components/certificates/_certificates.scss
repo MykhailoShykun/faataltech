@@ -17,6 +17,9 @@
 .certificates__image {
   width: 100%;
   margin-bottom: 16px;
+  @media screen and (min-width: $screen-xl) {
+    width: 45%;
+  }
 }
 .certificates-text-block {
   @media screen and (min-width: $screen-xl) {
@@ -28,5 +31,12 @@
 .certificates-text-block__inner {
   @media screen and (min-width: $screen-xl) {
     width: 50%;
+  }
+}
+.certificates {
+  @media screen and (min-width: $screen-xl) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

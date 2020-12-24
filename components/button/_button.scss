@@ -12,7 +12,7 @@
   padding: 10px 17px;
   text-decoration: none;
   @media screen and (min-width: $screen-xl) {
-    padding: 17px 24px;
+    padding: 14px 24px;
     font-size: 16px;
     line-height: 22px;
     margin: 40px auto;
@@ -27,9 +27,34 @@
   &.button_production {
     margin-bottom: 52px;
   }
+  &.button_certificates {
+    @media screen and (min-width: $screen-xl) {
+      &:hover {
+        background: #232323;
+        border: 2px solid #232323;
+        color: #FDE700;
+      }
+    }
+  }
   &.button_contacts {
     color: #FFFFFF;
     border: 2px solid #DCDAD9;
     margin-bottom: unset;
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+  &.button_form {
+    &:hover {
+      cursor: pointer;
+    }
+    background: transparent;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    margin: 40px 0;
+    align-self: flex-end;
+    &:focus {
+      outline: none;
+    }
   }
 }

@@ -5,6 +5,9 @@
   position: relative;
   background-color: rgba(0, 0, 0, 0.7);
   padding-bottom: 30px;
+  @media screen and (min-width: $screen-xl) {
+    padding-top: 60px;
+  }
 }
 .footer-top__background {
   top: 0;
@@ -25,16 +28,26 @@
   text-transform: uppercase;
   margin: 0 0 19px 0;
   padding: 19px 0 0 0;
+  @media screen and (min-width: $screen-xl) {
+    display: none;
+  }
 }
 .contacts {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (min-width: $screen-xl) {
+    align-items: flex-start;
+  }
 }
 .contacts__block {
   list-style: none;
   padding: unset;
   margin: unset;
+  @media screen and (min-width: $screen-xl) {
+    width: 30%;
+    max-width: 230px;
+  }
 }
 .contacts__text {
   font-style: normal;
@@ -42,6 +55,98 @@
   font-size: 13px;
   line-height: 18px;
   color: #FFFFFF;
+  &.contacts__text_title {
+    display: none;
+  }
+  @media screen and (min-width: $screen-xl) {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    &.contacts__text_title {
+      display: block;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+  }
+}
+.contacts__form {
+  display: none;
+  @media screen and (min-width: $screen-xl) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 30%;
+    max-width: 230px;
+  }
+}
+.inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.contacts__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #FFFFFF;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: unset;
+  }
+  &::placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #939393;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.footer-middle {
+  display: none;
+  background-color: #FDE700;
+  @media screen and (min-width: $screen-xl) {
+    display: block;
+  }
+}
+.footer-middle__content {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+  border-bottom: 2px solid #232323;
+  padding: 30px 0;
+}
+.footer-middle__link {
+  &:hover {
+    text-decoration: underline;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+  text-decoration: none;
+  &:after {
+    content: '';
+    width: 10px;
+    height: 18px;
+    display: block;
+    background: url("img/dest/footer-link-arrow.png") no-repeat 50%;
+    margin-left: 10px;
+  }
 }
 .footer-bottom {
   background-color: #FDE700;
@@ -52,6 +157,9 @@
     align-items: center;
     padding: 20px 0;
     border-bottom: 2px solid #000000;
+    @media screen and (min-width: $screen-xl) {
+      padding: 30px 0;
+    }
   }
 }
 .footer-bottom__block {
@@ -73,6 +181,10 @@
   width: 24px;
   height: 24px;
   background-color: black;
+  @media screen and (min-width: $screen-xl) {
+    width: 43px;
+    height: 43px;
+  }
 }
 .quality-markings__image {
   position: absolute;
@@ -80,10 +192,20 @@
   height: 100%;
   object-fit: contain;
 }
+.logo_footer {
+  width: 25px;
+  @media screen and (min-width: $screen-xl) {
+    width: 43px;
+  }
+}
 .copyright {
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
   line-height: 14px;
   color: #232323;
+  @media screen and (min-width: $screen-xl) {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }

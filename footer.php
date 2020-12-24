@@ -5,6 +5,7 @@
             <h3 class="footer-top__title">f.a. atal technology LTD.</h3>
             <div class="contacts">
                 <ul class="contacts__block">
+                    <li class="contacts__text contacts__text_title">f.a. atal technology LTD.</li>
                     <li class="contacts__text">Paran st. 2</li>
                     <li class="contacts__text">2030118 Yavne, Israel﻿</li>
                     <li class="contacts__text">Po box 387</li>
@@ -15,8 +16,27 @@
                     <li class="contacts__text">e-mail - info@atal-tech.com</li>
                     <li class="contacts__text">Fax 15389322593﻿</li>
                 </ul>
+                <form class="contacts__form">
+                    <div class="inputs-wrapper">
+                        <input class="contacts__input" type="text" name="name" placeholder="Name">
+                        <input class="contacts__input" type="email" name="email" placeholder="E-mail">
+                    </div>
+                    <button class="button button_form">Contact us</button>
+                </form>
             </div>
             <a href="<?= home_url(); ?>" class="button button_contacts">Contact us</a>
+        </div>
+    </div>
+    <div class="footer-middle">
+        <div class="container">
+            <div class="footer-middle__content">
+                <a href="<?= home_url(); ?>" class="footer-middle__link">Blog</a>
+                <a href="<?= home_url(); ?>" class="footer-middle__link">Home</a>
+                <a href="<?= home_url(); ?>" class="footer-middle__link">About</a>
+                <a href="<?= home_url(); ?>" class="footer-middle__link">Certification</a>
+                <a href="<?= home_url(); ?>" class="footer-middle__link">Contacts</a>
+                <a href="<?= home_url(); ?>" class="footer-middle__link">Technologies</a>
+            </div>
         </div>
     </div>
     <div class="footer-bottom">
@@ -45,8 +65,7 @@
     </div>
     <div class="footprint">
         <div class="container">
-            <a href="https://www.inkdesign.studio/" class="footprint__text footprint__text_mobile">By
-                <img src="<?= get_template_directory_uri() ?>/img/dest/inkdesign.png" alt="inkdesign studio" class="footprint__logo"></a>
+            <a href="https://www.inkdesign.studio/" class="footprint__text footprint__text_mobile">Made by<img src="<?= get_template_directory_uri() ?>/img/dest/inkdesign.png" alt="inkdesign studio" class="footprint__logo">inkdesign studio</a>
         </div>
     </div>
 </footer>
