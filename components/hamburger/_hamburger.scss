@@ -1,0 +1,22 @@
+.header__hamburger {
+  display: block;
+  cursor: pointer;
+  @media screen and (min-width: $screen-xl) {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.hamburger__span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #232323;
+  margin-bottom: 5px;
+  transition: .3s background-color;
+  &:last-child {
+    margin-bottom: unset;
+  }
+  &.hamburger__span_front {
+    background-color: #ffffff;
+  }
+}

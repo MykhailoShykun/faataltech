@@ -1,0 +1,108 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 0;
+}
+.image-slider__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+  max-width: 246px;
+  z-index: 1;
+  @media screen and (min-width: $screen-xl) {
+    font-size: 48px;
+    line-height: 65px;
+    max-width: unset;
+    text-align: center;
+  }
+}
+.subtitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #232323;
+  @media screen and (min-width: $screen-xl) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  &.features__subtitle {
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+    @media screen and (min-width: $screen-xl) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+  &.subtitle_info {
+    margin-bottom: 19px;
+    @media screen and (min-width: $screen-xl) {
+      margin-bottom: 22px;
+    }
+  }
+  &.subtitle_certificates {
+    @media screen and (min-width: $screen-xl) {
+      margin-top: unset;
+    }
+  }
+}
+.title {
+  padding-top: 30px;
+  margin-bottom: 18px;
+  margin-top: unset;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+  @media screen and (min-width: $screen-xl) {
+    font-size: 36px;
+    line-height: 49px;
+    margin-bottom: 45px;
+  }
+  &.title__certificates {
+    padding-top: 124px;
+    @media screen and (min-width: $screen-xl) {
+      padding-top: unset;
+      width: 50%;
+    }
+  }
+  &:before {
+    content: '';
+    display: block;
+    width: 69px;
+    height: 2px;
+    background-color: #000000;
+    margin-bottom: 5px;
+  }
+}
+.footprint {
+  background-color: #FDE700;
+  padding-bottom: 16px;
+  @media screen and (min-width: $screen-xl) {
+    padding-bottom: 30px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.footprint__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  opacity: 0.4;
+  text-decoration: none;
+}
+.footprint__logo {
+  width: 19px;
+  margin-left: 6px;
+}

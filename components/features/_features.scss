@@ -1,0 +1,24 @@
+.section_features {
+  background-color: #FDE700;
+  padding-bottom: 30px;
+}
+.features__icon {
+  height: 48px;
+  width: auto;
+  display: inline-block;
+  margin-right: 10px;
+}
+.features__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.features__grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 165px 165px;
+  grid-auto-rows: auto;
+  column-gap: 23px;
+  row-gap: 20px;
+}

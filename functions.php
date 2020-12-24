@@ -69,6 +69,10 @@ add_action( 'after_setup_theme', 'sp_content_width', 0 );
 
 //Enqueue scripts and styles.
 function sp_scripts() {
+    wp_register_style( 'Normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' );
+    wp_enqueue_style('Normalize');
+    wp_register_style( 'Swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
+    wp_enqueue_style('Swiper');
     wp_enqueue_style(
         'style.min.css',
         get_template_directory_uri().'/style.min.css',
@@ -101,4 +105,46 @@ function get_component($file, $params = null, $return = false)
    } else { 
       include('components' . '/' . $file . '/' . $file . '.php');
    }
+}
+
+// REMOVE EMOJI ICONS
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+add_action( 'after_theme_support', 'remove_feed' );
+
+function remove_feed() {
+    remove_theme_support( 'automatic-feed-links' );
+}
+
+// Use what works best for your website
+add_action('init', 'my_head_cleanup');
+
+function my_head_cleanup() {
+  // Category Feeds
+  remove_action( 'wp_head', 'feed_links_extra', 3 );
+
+  // Post and Comment Feeds
+  remove_action( 'wp_head', 'feed_links', 2 );
+
+  // EditURI link
+  remove_action( 'wp_head','rsd_link' );
+
+  // Windows Live Writer
+  remove_action( 'wp_head','wlwmanifest_link' );
+
+  // index link
+  remove_action( 'wp_head','index_rel_link' );
+
+  // previous link
+  remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+
+  // start link
+  remove_action( 'wp_head', 'start_post_rel_link', 10,0 );
+
+  // Links for Adjacent Posts
+  remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+
+  // WP version
+   remove_action( 'wp_head', 'wp_generator' );
 }

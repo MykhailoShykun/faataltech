@@ -1,0 +1,35 @@
+.button {
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #232323;
+  border: 2px solid #232323;
+  border-radius: 10px;
+  padding: 10px 17px;
+  text-decoration: none;
+  @media screen and (min-width: $screen-xl) {
+    padding: 17px 24px;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 40px auto;
+    border-radius: 15px;
+    transition: .2s color, .2s background-color, .2s border;
+    &:hover {
+      background: #FDE700;
+      border: 2px solid #FDE700;
+      color: #232323;
+    }
+  }
+  &.button_production {
+    margin-bottom: 52px;
+  }
+  &.button_contacts {
+    color: #FFFFFF;
+    border: 2px solid #DCDAD9;
+    margin-bottom: unset;
+  }
+}

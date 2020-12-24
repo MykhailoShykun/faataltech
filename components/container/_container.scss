@@ -1,0 +1,27 @@
+.container {
+  max-width: 345px;
+  margin: 0 auto;
+  width: 98%;
+  @media screen and (min-width: $screen-s) {
+    max-width: 590px;
+  }
+  @media screen and (min-width: $screen-m) {
+    max-width: 738px;
+  }
+  @media screen and (min-width: $screen-l) {
+    max-width: 994px;
+  }
+  @media screen and (min-width: $screen-xl) {
+    max-width: 1170px;
+  }
+  @media screen and (min-width: $screen-xxl) {
+    max-width: 1336px;
+  }
+}
+.container-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+}

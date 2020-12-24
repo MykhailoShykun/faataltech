@@ -1,0 +1,32 @@
+.section_certificates {
+  background-color: #FDE700;
+  position: relative;
+}
+.certificates__cog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  pointer-events: none;
+  transform: translate(18%, -29%);
+  @media screen and (min-width: $screen-xl) {
+    width: 350px;
+    top: -2%;
+  }
+}
+.certificates__image {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.certificates-text-block {
+  @media screen and (min-width: $screen-xl) {
+    padding-top: 220px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.certificates-text-block__inner {
+  @media screen and (min-width: $screen-xl) {
+    width: 50%;
+  }
+}
