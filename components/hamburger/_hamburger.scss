@@ -1,6 +1,7 @@
 .header__hamburger {
   display: block;
   cursor: pointer;
+  position: relative;
   @media screen and (min-width: $screen-xl) {
     opacity: 0;
     visibility: hidden;
@@ -12,9 +13,22 @@
   height: 2px;
   background-color: #232323;
   margin-bottom: 5px;
-  transition: .3s background-color;
+  transition: .3s background-color, .3s opacity, .3s transform;
+  &:first-child {
+    &.active {
+      transform: translateY(8px) rotate(45deg);
+    }
+  }
+  &:nth-child(2) {
+    &.active {
+      opacity: 0;
+    }
+  }
   &:last-child {
     margin-bottom: unset;
+    &.active {
+      transform: translateY(-6px) rotate(-45deg);
+    }
   }
   &.hamburger__span_front {
     background-color: #ffffff;

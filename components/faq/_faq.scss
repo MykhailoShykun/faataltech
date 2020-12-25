@@ -1,0 +1,108 @@
+.faq {
+  display: block;
+  margin-bottom: 70px;
+  @media screen and (min-width: $screen-xl) {
+    margin-bottom: 120px;
+  }
+}
+.faq__title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #232323;
+  text-transform: uppercase;
+  @media screen and (min-width: $screen-xl) {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+}
+.faq-list {
+  list-style: none;
+  padding: unset;
+  margin: unset;
+}
+.faq-item {
+  background: #FDE700;
+  border-radius: 10px;
+  padding: 17px 15px;
+  margin-bottom: 15px;
+  &:last-child {
+    margin-bottom: unset;
+  }
+  @media screen and (min-width: $screen-xl) {
+    padding: 35px 20px;
+    margin-bottom: 20px;
+  }
+}
+.faq-item__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  margin: unset;
+  @media screen and (min-width: $screen-xl) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.faq-item__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  margin: 25px 0 35px;
+  @media screen and (min-width: $screen-xl) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.faq-item__header {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-item__arrow-block {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 20%;
+  max-width: 44px;
+  height: 100%;
+  &:after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 7px;
+    background: url("img/dest/faq-item-arrow.png") no-repeat center;
+    transform-origin: center;
+    transition: .2s transform;
+    @media screen and (min-width: $screen-xl) {
+      width: 26px;
+      height: 15px;
+      background: url("img/dest/faq-item-arrow_desktop.png") no-repeat center;
+    }
+  }
+  &.active {
+    &:after {
+      transform: rotate(180deg);
+    }
+  }
+}
+.faq-item__text-block {
+  display: none;
+  opacity: 0;
+  height: 1px;
+  transition: .2s height, .2s opacity;
+  &.active {
+    display: block;
+    height: initial;
+    opacity: 1;
+  }
+}

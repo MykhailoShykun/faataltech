@@ -17,6 +17,8 @@
         </div>
         <a href="<?= home_url(); ?>" class="button button_production">all technologies</a>
     </div>
+    <?php if (is_front_page()) { ?>
     <img src="<?= get_template_directory_uri() ?>/img/dest/cog-grey.png" alt="picture" class="production__cog_large">
     <img src="<?= get_template_directory_uri() ?>/img/dest/cog-grey.png" alt="picture" class="production__cog_small">
+    <?php } ?>
 </section>

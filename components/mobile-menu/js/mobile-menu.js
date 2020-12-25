@@ -36,5 +36,8 @@ window.addEventListener('load', function () {
             }
         }
         mobileMenu.classList.toggle('active');
+        document.querySelectorAll('.hamburger__span').forEach(function (span) {
+            span.classList.toggle('active');
+        })
     })
 })

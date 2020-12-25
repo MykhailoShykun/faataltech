@@ -74,9 +74,10 @@ if (is_front_page()) { ?>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="<?= get_template_directory_uri() . '/components/slider/js/slider.js'?>"></script>
     <script src="<?= get_template_directory_uri() . '/components/header/js/header.js'?>"></script>
-    <script src="<?= get_template_directory_uri() . '/components/certificates/js/certificates.js'?>"></script>
-<?php }
-?>
+    <script src="<?= get_template_directory_uri() . '/components/section_certificates/js/section_certificates.js'?>"></script>
+<?php } if (is_page()) { ?>
+    <script src="<?= get_template_directory_uri() . '/components/faq-item/js/faq-item.js'?>"></script>
+<?php } ?>
 <script src="<?= get_template_directory_uri() . '/components/mobile-menu/js/mobile-menu.js'?>"></script>
 </body>
 </html>
