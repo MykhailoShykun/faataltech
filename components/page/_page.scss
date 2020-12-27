@@ -1,0 +1,26 @@
+.page-content-block {
+  margin-bottom: 50px;
+  @media screen and (min-width: $screen-xl) {
+    min-height: 407px;
+  }
+}
+.page-content-block__thumbnail-block {
+  @media screen and (min-width: $screen-xl) {
+    width: 550px;
+    height: 407px;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+}
+.page-content-block__text-block {
+  * {
+    font-size: 14px;
+    line-height: 19px;
+    color: #232323;
+    @media screen and (min-width: $screen-xl) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}

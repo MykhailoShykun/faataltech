@@ -17,21 +17,21 @@ $footerBg = get_post_meta($post_id, "wpcf-footer-background-image", true);
         <?php } ?>
         <div class="container">
             <?php if (!empty($companyName)) { ?>
-            <h3 class="footer-top__title"><?= $companyName ?>"</h3>
+            <h3 class="footer-top__title"><?= $companyName ?></h3>
             <?php } ?>
             <div class="contacts">
                 <ul class="contacts__block">
                     <?php if (!empty($companyName)) { ?>
                     <li class="contacts__text contacts__text_title"><?= $companyName ?></li>
                     <?php } ?>
-                    <?php if (!empty($footerAddressArr)) {
+                    <?php if (!empty($footerAddressArr[0])) {
                         foreach ($footerAddressArr as $address) {
                         ?>
                     <li class="contacts__text"><?= $address ?></li>
                     <?php } } ?>
                 </ul>
                 <ul class="contacts__block">
-                    <?php if (!empty($footerContactsArr)) {
+                    <?php if (!empty($footerContactsArr[0])) {
                         foreach ($footerContactsArr as $contact) { ?>
                             <li class="contacts__text"><?= $contact ?></li>
                         <?php } } ?>
@@ -71,7 +71,7 @@ $footerBg = get_post_meta($post_id, "wpcf-footer-background-image", true);
             </div>
             <div class="footer-bottom__block">
                 <div class="quality-markings">
-                    <?php if (!empty($footerQualityMark)) {
+                    <?php if (!empty($footerQualityMark[0])) {
                         foreach ($footerQualityMark as $mark) { ?>
                             <div class="quality-markings__link">
                                 <img src="<?= $mark ?>" alt="link" class="quality-markings__image">
@@ -95,6 +95,10 @@ if (is_front_page()) { ?>
     <script src="<?= get_template_directory_uri() . '/components/section_certificates/js/section_certificates.js'?>"></script>
 <?php } if (is_page()) { ?>
     <script src="<?= get_template_directory_uri() . '/components/faq-item/js/faq-item.js'?>"></script>
+<?php } ?>
+<?php if (is_single()) { ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    <script src="<?= get_template_directory_uri() . '/assets/js/lightbox-options.js'?>"></script>
 <?php } ?>
 <script src="<?= get_template_directory_uri() . '/components/mobile-menu/js/mobile-menu.js'?>"></script>
 </body>

@@ -1,0 +1,3 @@
+lightbox.option({
+    alwaysShowNavOnTouchDevices: true,
+})

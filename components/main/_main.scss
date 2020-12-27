@@ -1,8 +1,27 @@
 .main {
   display: block;
 }
+.main_page {
+  padding-bottom: 70px;
+  @media screen and (min-width: $screen-xl) {
+    padding-bottom: 120px;
+  }
+}
 .main_certificates-page {
   @media screen and (min-width: $screen-xl) {
     display: flex;
+  }
+}
+.main_error-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  height: 65vh;
+  background: #FDE700;
+  min-height: 375px;
+  @media screen and (min-width: $screen-xl) {
+    min-height: 586px;
   }
 }
