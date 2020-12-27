@@ -6,4 +6,11 @@ new Swiper('.image-slider', {
     initialSlide: 1,
     loop: true,
     grabCursor: true,
+    autoplay: {
+        delay: 5000,
+    },
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
 });

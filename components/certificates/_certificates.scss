@@ -5,6 +5,11 @@
     width: 45%;
   }
 }
+.certificates__image_certificates-page {
+  @media screen and (min-width: $screen-xl) {
+    width: 100%;
+  }
+}
 .certificates-text-block {
   @media screen and (min-width: $screen-xl) {
     padding-top: 220px;
@@ -21,6 +26,16 @@
   @media screen and (min-width: $screen-xl) {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-right: 70px;
+    flex-wrap: wrap;
+  }
+}
+.certificates_certificates-page {
+  @media screen and (min-width: $screen-xl) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 }

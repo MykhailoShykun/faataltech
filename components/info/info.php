@@ -1,7 +1,15 @@
+<?php
+$post_id = get_the_ID();
+$title = get_post_meta($post_id, "wpcf-general-information-title", true);
+$description = get_post_meta($post_id, "wpcf-general-information-description", true);
+$descriptionArr = explode('|', $description);
+?>
+
 <section class="section section_info">
     <div class="container">
-        <h2 class="title title_info">Why exactly F.A Atal Technology LTD?</h2>
-        <p class="subtitle subtitle_info">On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
-        <p class="subtitle subtitle_info">On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+        <h2 class="title title_info"><?= $title ?></h2>
+        <?php foreach ($descriptionArr as $desc) { ?>
+        <p class="subtitle subtitle_info"><?= esc_html($desc) ?></p>
+        <?php } ?>
     </div>
 </section>

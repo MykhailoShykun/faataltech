@@ -3,7 +3,7 @@
  *  functions and definitions
  */
 
-add_filter('show_admin_bar', '__return_false');
+//add_filter('show_admin_bar', '__return_false');
 
 function getImage( $name ) {
     echo get_template_directory_uri() . '/img/dest/' . $name;
@@ -30,9 +30,9 @@ if ( ! function_exists( 'sp_setup' ) ) :
       add_theme_support( 'custom-logo' );
 
       register_nav_menus( array(
-         'menu-1' => esc_html__( 'Primary', '*' ),
+          'menu-1' => esc_html__( 'Header', '*' ),
+          'menu-2' => esc_html__( 'Footer', '*' ),
       ) );
-      register_nav_menu('menu', 'Main navigation menu');
 
       add_theme_support( 'html5', array(
          'search-form',

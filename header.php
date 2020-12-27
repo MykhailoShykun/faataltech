@@ -18,11 +18,14 @@
         </a>
         <nav class="header__nav">
             <a href="<?= home_url(); ?>" class="nav__link <?php if (is_front_page()) { ?>nav__link_front<?php } ?>">Home</a>
-            <a href="<?= home_url(); ?>" class="nav__link <?php if (is_front_page()) { ?>nav__link_front<?php } ?>">About</a>
-            <a href="<?= home_url(); ?>" class="nav__link <?php if (is_front_page()) { ?>nav__link_front<?php } ?>">Certification</a>
-            <a href="<?= home_url(); ?>" class="nav__link <?php if (is_front_page()) { ?>nav__link_front<?php } ?>">Contacts</a>
-            <a href="<?= home_url(); ?>" class="nav__link <?php if (is_front_page()) { ?>nav__link_front<?php } ?>">Technologies</a>
-            <a href="<?= home_url(); ?>" class="nav__link <?php if (is_front_page()) { ?>nav__link_front<?php } ?>">FAQ</a>
+            <?php
+            $locations = get_nav_menu_locations();
+            $menu_id = $locations['menu-1'];
+            $menu_items = wp_get_nav_menu_items($menu_id);
+            foreach ($menu_items as $menu_item) {
+                ?>
+                <a href="<?= $menu_item->url; ?>" class="nav__link <?php if (is_front_page()) { ?>nav__link_front<?php } ?>"><?= $menu_item->title; ?></a>
+            <?php } ?>
         </nav>
         <div class="header__hamburger">
             <span class="hamburger__span <?php if (is_front_page()) { ?>hamburger__span_front<?php } ?>"></span>

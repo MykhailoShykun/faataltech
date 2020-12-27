@@ -1,4 +1,17 @@
-<div class="certificates">
-    <img src="<?= get_template_directory_uri() ?>/img/dest/certificate.jpg" alt="picture" class="certificates__image">
-    <img src="<?= get_template_directory_uri() ?>/img/dest/certificate-iso.jpg" alt="picture" class="certificates__image">
+<?php
+$post_id = get_the_ID();
+if (is_page_template('certificates.php')) {
+    $certificates = get_post_meta($post_id, "wpcf-certificate-picture");
+}
+else {
+    $certificates = get_post_meta($post_id, "wpcf-certificate-picture-main");
+}
+?>
+
+<div class="certificates <?php if (is_page_template('certificates.php')) { ?>certificates_certificates-page<?php } ?>">
+    <?php
+    foreach ($certificates as $certificate) {
+    ?>
+    <img src="<?= $certificate ?>" alt="picture" class="certificates__image <?php if (is_page_template('certificates.php')) { ?>certificates__image_certificates-page<?php } ?>">
+    <?php } ?>
 </div>

@@ -2,16 +2,12 @@
   position: relative;
 }
 .production__grid {
-  display: grid;
-  grid-auto-rows: 230px;
-  grid-template-columns: 160px 160px;
+  display: flex;
   justify-content: space-evenly;
-  column-gap: 23px;
-  row-gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
   @media screen and (min-width: $screen-xl) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
   }
 }
 .production__cog_large {
@@ -41,24 +37,93 @@
     width: 301px;
   }
 }
-.grid__item {
-  display: block;
-  width: 100%;
-  height: 100%;
+.grid-item {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+  width: 161px;
+  height: 229px;
   border: 2px solid #F0F0F0;
   z-index: 1;
   background-color: #ffffff;
+  margin-bottom: 15px;
   @media screen and (min-width: $screen-xl) {
     width: 222px;
     height: 316px;
     transition: .3s box-shadow;
     &:hover {
       box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+      .grid-item__overlay {
+        opacity: 1;
+      }
     }
   }
 }
-.item__image {
+.grid-item_archive {
+  @media screen and (min-width: $screen-xl) {
+    width: 354px;
+    height: 410px;
+    margin-bottom: 20px;
+  }
+}
+.grid-item__image {
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+.grid-item__overlay {
+  display: none;
+  @media screen and (min-width: $screen-xl) {
+    z-index: 1;
+    display: flex;
+    opacity: 0;
+    transition: .3s opacity;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+  }
+}
+.grid-item__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+  width: 80%;
+  margin: 0 0 11px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.grid-item__subtitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  width: 80%;
+  margin: 0 0 19px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.grid-item__title_front {
+  font-size: 16px;
+  line-height: 22px;
+}
+.grid-item__subtitle_front {
+  font-size: 14px;
+  line-height: 19px;
 }

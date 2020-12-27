@@ -96,13 +96,14 @@
   }
 }
 .faq-item__text-block {
-  display: none;
+  display: block;
+  overflow: hidden;
   opacity: 0;
-  height: 1px;
-  transition: .2s height, .2s opacity;
+  max-height: 0;
+  transition: .5s max-height, .5s opacity;
   &.active {
-    display: block;
-    height: initial;
+    max-height: 500px;
     opacity: 1;
+    transition: .5s max-height, .5s opacity;
   }
 }

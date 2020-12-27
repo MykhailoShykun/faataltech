@@ -1,28 +1,44 @@
+<?php
+$post_id = 30;
+$companyName = get_post_meta($post_id, "wpcf-footer-company-name", true);
+$footerAddress = get_post_meta($post_id, "wpcf-footer-address", true);
+$footerAddressArr = explode('|', $footerAddress);
+$footerContacts = get_post_meta($post_id, "wpcf-footer-contacts", true);
+$footerContactsArr = explode('|', $footerContacts);
+$footerCopyrights = get_post_meta($post_id, "wpcf-footer-copyrights", true);
+$footerQualityMark = get_post_meta($post_id, "wpcf-footer-quality-mark");
+$footerBg = get_post_meta($post_id, "wpcf-footer-background-image", true);
+?>
+
 <footer class="footer">
     <div class="footer-top">
-        <img src="<?= get_template_directory_uri() ?>/img/dest/footer-bg.jpg" alt="picture" class="footer-top__background">
+        <?php if (!empty($footerBg)) { ?>
+        <img src="<?= $footerBg ?>" alt="picture" class="footer-top__background">
+        <?php } ?>
         <div class="container">
-            <h3 class="footer-top__title">f.a. atal technology LTD.</h3>
+            <?php if (!empty($companyName)) { ?>
+            <h3 class="footer-top__title"><?= $companyName ?>"</h3>
+            <?php } ?>
             <div class="contacts">
                 <ul class="contacts__block">
-                    <li class="contacts__text contacts__text_title">f.a. atal technology LTD.</li>
-                    <li class="contacts__text">Paran st. 2</li>
-                    <li class="contacts__text">2030118 Yavne, Israel﻿</li>
-                    <li class="contacts__text">Po box 387</li>
+                    <?php if (!empty($companyName)) { ?>
+                    <li class="contacts__text contacts__text_title"><?= $companyName ?></li>
+                    <?php } ?>
+                    <?php if (!empty($footerAddressArr)) {
+                        foreach ($footerAddressArr as $address) {
+                        ?>
+                    <li class="contacts__text"><?= $address ?></li>
+                    <?php } } ?>
                 </ul>
                 <ul class="contacts__block">
-                    <li class="contacts__text">Tel ﻿﻿+972-722282511﻿</li>
-                    <li class="contacts__text">Tel ﻿﻿+972-547838090</li>
-                    <li class="contacts__text">e-mail - info@atal-tech.com</li>
-                    <li class="contacts__text">Fax 15389322593﻿</li>
+                    <?php if (!empty($footerContactsArr)) {
+                        foreach ($footerContactsArr as $contact) { ?>
+                            <li class="contacts__text"><?= $contact ?></li>
+                        <?php } } ?>
                 </ul>
-                <form class="contacts__form">
-                    <div class="inputs-wrapper">
-                        <input class="contacts__input" type="text" name="name" placeholder="Name">
-                        <input class="contacts__input" type="email" name="email" placeholder="E-mail">
-                    </div>
-                    <button class="button button_form">Contact us</button>
-                </form>
+                <div class="contacts__form">
+                    <a href="<?= home_url(); ?>" class="button button_form">Contact us</a>
+                </div>
             </div>
             <a href="<?= home_url(); ?>" class="button button_contacts">Contact us</a>
         </div>
@@ -30,12 +46,15 @@
     <div class="footer-middle">
         <div class="container">
             <div class="footer-middle__content">
-                <a href="<?= home_url(); ?>" class="footer-middle__link">Blog</a>
                 <a href="<?= home_url(); ?>" class="footer-middle__link">Home</a>
-                <a href="<?= home_url(); ?>" class="footer-middle__link">About</a>
-                <a href="<?= home_url(); ?>" class="footer-middle__link">Certification</a>
-                <a href="<?= home_url(); ?>" class="footer-middle__link">Contacts</a>
-                <a href="<?= home_url(); ?>" class="footer-middle__link">Technologies</a>
+                <?php
+                $locations = get_nav_menu_locations();
+                $menu_id = $locations['menu-2'];
+                $menu_items = wp_get_nav_menu_items($menu_id);
+                foreach ($menu_items as $menu_item) {
+                    ?>
+                    <a href="<?= $menu_item->url; ?>" class="footer-middle__link"><?= $menu_item->title; ?></a>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -46,19 +65,18 @@
                 $custom_logo__url = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
                 echo $custom_logo__url[0];
                 ?>" alt="logo" class="logo logo_footer">
-                <h6 class="copyright">Copyright © 2020 F.A Atal Technology LTD</h6>
+                <?php if (!empty($footerCopyrights)) { ?>
+                <h6 class="copyright"><?= $footerCopyrights ?></h6>
+                <?php } ?>
             </div>
             <div class="footer-bottom__block">
                 <div class="quality-markings">
-                    <a href="<?= home_url(); ?>" class="quality-markings__link">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/600px-Telegram_logo.svg.png" alt="link" class="quality-markings__image">
-                    </a>
-                    <a href="<?= home_url(); ?>" class="quality-markings__link">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/600px-Telegram_logo.svg.png" alt="link" class="quality-markings__image">
-                    </a>
-                    <a href="<?= home_url(); ?>" class="quality-markings__link">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/600px-Telegram_logo.svg.png" alt="link" class="quality-markings__image">
-                    </a>
+                    <?php if (!empty($footerQualityMark)) {
+                        foreach ($footerQualityMark as $mark) { ?>
+                            <div class="quality-markings__link">
+                                <img src="<?= $mark ?>" alt="link" class="quality-markings__image">
+                            </div>
+                        <?php } } ?>
                 </div>
             </div>
         </div>

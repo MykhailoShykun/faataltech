@@ -1,0 +1,8 @@
+.main {
+  display: block;
+}
+.main_certificates-page {
+  @media screen and (min-width: $screen-xl) {
+    display: flex;
+  }
+}
