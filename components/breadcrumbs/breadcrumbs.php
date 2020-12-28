@@ -20,8 +20,8 @@ if (is_single()) {
 <div class="container">
     <div class="breadcrumbs">
         <?php if (is_page()) { ?>
-            <a href="<?= home_url(); ?>" class="breadcrumbs__text breadcrumbs__text_home <?php if (is_page_template('certificates.php')) { ?>breadcrumbs__text_grey<?php } ?>">Home</a>
-            <a href="<?= get_page_link(); ?>" class="breadcrumbs__text breadcrumbs__text_last <?php if (is_page_template('certificates.php')) { ?>breadcrumbs__text_grey<?php } ?>"><?= the_title(); ?></a>
+            <a href="<?= home_url(); ?>" class="breadcrumbs__text breadcrumbs__text_home <?php if (is_page_template('certificates.php') || is_page_template('contact-form.php')) { ?>breadcrumbs__text_grey<?php } ?>">Home</a>
+            <a href="<?= get_page_link(); ?>" class="breadcrumbs__text breadcrumbs__text_last <?php if (is_page_template('certificates.php') || is_page_template('contact-form.php')) { ?>breadcrumbs__text_grey<?php } ?>"><?= the_title(); ?></a>
         <?php } ?>
         <?php if (is_archive() && $cat_id = 4) { ?>
             <a href="<?= home_url(); ?>" class="breadcrumbs__text breadcrumbs__text_home">Home</a>

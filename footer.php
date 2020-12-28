@@ -11,6 +11,7 @@ $footerBg = get_post_meta($post_id, "wpcf-footer-background-image", true);
 ?>
 
 <footer class="footer">
+    <?php if (!is_page_template('contact-form.php')) { ?>
     <div class="footer-top">
         <?php if (!empty($footerBg)) { ?>
         <img src="<?= $footerBg ?>" alt="picture" class="footer-top__background">
@@ -43,6 +44,7 @@ $footerBg = get_post_meta($post_id, "wpcf-footer-background-image", true);
             <a href="<?= home_url(); ?>" class="button button_contacts">Contact us</a>
         </div>
     </div>
+    <?php } ?>
     <div class="footer-middle">
         <div class="container">
             <div class="footer-middle__content">

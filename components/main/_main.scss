@@ -25,3 +25,8 @@
     min-height: 586px;
   }
 }
+.main_contact-us {
+  @media screen and (min-width: $screen-xl) {
+    min-height: 64vh;
+  }
+}

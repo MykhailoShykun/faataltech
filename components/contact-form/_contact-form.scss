@@ -1,0 +1,104 @@
+.contact-us {
+  @media screen and (min-width: $screen-xl) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 160px;
+  }
+}
+.contact-us__text-block-wrapper {
+  @media screen and (min-width: $screen-xl) {
+    width: 48%;
+  }
+}
+.contact-us__form {
+  @media screen and (min-width: $screen-xl) {
+    width: 48%;
+  }
+}
+.contact-us__content-block {
+  margin: 46px 0;
+  * {
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    @media screen and (min-width: $screen-xl) {
+      font-size: 21px;
+      line-height: 29px;
+    }
+  }
+}
+.inputs-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 27px;
+  @media screen and (min-width: $screen-xl) {
+    margin-bottom: 61px;
+  }
+}
+.form-input {
+  &:focus {
+    outline: none;
+  }
+  width: 42%;
+  background: rgba(0, 0, 0, 0.22);
+  border: none;
+  border-bottom: 2px solid #c4c4c4;
+  padding: 10px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+  @media screen and (min-width: $screen-xl) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  &::placeholder {
+    color: #5B5B5B;
+  }
+}
+.textarea-wrapper {
+  display: flex;
+  width: 100%;
+}
+.form-textarea {
+  &:focus {
+    outline: none;
+  }
+  resize: vertical;
+  width: 100%;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.22);
+  border: none;
+  border-bottom: 2px solid #c4c4c4;
+  padding: 10px;
+  @media screen and (min-width: $screen-xl) {
+    font-size: 16px;
+    line-height: 22px;
+    min-height: 150px;
+  }
+  &::placeholder {
+    color: #5B5B5B;
+  }
+}
+.form-btn {
+  &:focus {
+    outline: none;
+  }
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  margin: 30px auto;
+  @media screen and (min-width: $screen-xl) {
+    margin: 40px 0 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

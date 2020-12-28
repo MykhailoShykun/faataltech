@@ -10,8 +10,8 @@
     <?php } ?>
     <?php wp_head(); ?>
 </head>
-<body class="body">
-<header class="header <?php if (is_front_page()) { ?>header_front<?php } ?>">
+<body class="body <?php if (is_page_template('contact-form.php')) { ?>body_contact-us<?php } ?>">
+<header class="header <?php if (is_front_page() || is_page_template('contact-form.php')) { ?>header_front<?php } ?>">
     <div class="header__inner">
         <a href="<?= home_url(); ?>" class="header__link">
             <img src="<?php
@@ -20,20 +20,20 @@
             ?>" alt="logo" class="header__logo">
         </a>
         <nav class="header__nav">
-            <a href="<?= home_url(); ?>" class="nav__link <?php if (is_front_page()) { ?>nav__link_front<?php } ?>">Home</a>
+            <a href="<?= home_url(); ?>" class="nav__link <?php if (is_front_page() || is_page_template('contact-form.php')) { ?>nav__link_front<?php } ?>">Home</a>
             <?php
             $locations = get_nav_menu_locations();
             $menu_id = $locations['menu-1'];
             $menu_items = wp_get_nav_menu_items($menu_id);
             foreach ($menu_items as $menu_item) {
                 ?>
-                <a href="<?= $menu_item->url; ?>" class="nav__link <?php if (is_front_page()) { ?>nav__link_front<?php } ?>"><?= $menu_item->title; ?></a>
+                <a href="<?= $menu_item->url; ?>" class="nav__link <?php if (is_front_page() || is_page_template('contact-form.php')) { ?>nav__link_front<?php } ?>"><?= $menu_item->title; ?></a>
             <?php } ?>
         </nav>
         <div class="header__hamburger">
-            <span class="hamburger__span <?php if (is_front_page()) { ?>hamburger__span_front<?php } ?>"></span>
-            <span class="hamburger__span <?php if (is_front_page()) { ?>hamburger__span_front<?php } ?>"></span>
-            <span class="hamburger__span <?php if (is_front_page()) { ?>hamburger__span_front<?php } ?>"></span>
+            <span class="hamburger__span <?php if (is_front_page() || is_page_template('contact-form.php')) { ?>hamburger__span_front<?php } ?>"></span>
+            <span class="hamburger__span <?php if (is_front_page() || is_page_template('contact-form.php')) { ?>hamburger__span_front<?php } ?>"></span>
+            <span class="hamburger__span <?php if (is_front_page() || is_page_template('contact-form.php')) { ?>hamburger__span_front<?php } ?>"></span>
         </div>
     </div>
 </header>

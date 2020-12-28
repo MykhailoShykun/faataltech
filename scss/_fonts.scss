@@ -75,6 +75,12 @@
     margin-bottom: 45px;
     padding-top: 50px;
   }
+  &.title_contact-us {
+    color: #FFFFFF;
+    &::before {
+      background-color: #FDE700;
+    }
+  }
   &.title__certificates {
     padding-top: 124px;
     @media screen and (min-width: $screen-xl) {
